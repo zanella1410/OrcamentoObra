@@ -1,10 +1,10 @@
 const _ = require('lodash')
-const OrcamentoObra = require('./orcamentoObra')
+const ConsumoGas = require('./consumoGas')
 
-OrcamentoObra.methods(['get', 'post', 'put', 'delete'])
-OrcamentoObra.updateOptions({new: true, runValidators: true})
+ConsumoGas.methods(['get', 'post', 'put', 'delete'])
+ConsumoGas.updateOptions({new: true, runValidators: true})
 
-OrcamentoObra.after('post', sendErrorsOrNext).after('put', sendErrorsOrNext)
+ConsumoGas.after('post', sendErrorsOrNext).after('put', sendErrorsOrNext)
 
 function sendErrorsOrNext(req, res, next) {
   const bundle = res.locals.bundle
@@ -24,8 +24,8 @@ function parseErrors(nodeRestfulErrors) {
 }
 
 // paginação -- contador
-OrcamentoObra.route('count', function(req, res, next) {
-    OrcamentoObra.count(function(error, value) {
+ConsumoGas.route('count', function(req, res, next) {
+    ConsumoGas.count(function(error, value) {
       if(error) {
         res.status(500).json({errors: [error]})
       } else {
@@ -34,6 +34,6 @@ OrcamentoObra.route('count', function(req, res, next) {
     })
   })
 
-module.exports = OrcamentoObra
+module.exports = ConsumoGas
 
 

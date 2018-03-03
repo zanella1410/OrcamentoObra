@@ -1,4 +1,4 @@
-angular.module('orcamentoApp').component('valueBox', {
+angular.module('consumoApp').component('valueBox', {
   bindings: {
     grid: '@',
     colorClass: '@',

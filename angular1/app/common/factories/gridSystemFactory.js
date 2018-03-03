@@ -1,4 +1,4 @@
-angular.module('orcamentoApp').factory('gridSystem', [ function() {
+angular.module('consumoApp').factory('gridSystem', [ function() {
 
   function toCssClasses(numbers) {
     const cols = numbers ? numbers.split(' ') : []

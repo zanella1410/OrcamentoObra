@@ -1,18 +1,65 @@
-angular.module('orcamentoApp').config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    //'$httpProvider',
-    function ($stateProvider, $urlRouterProvider) {
-      $stateProvider.state('dashboard', {
-        url: "/dashboard",
-        templateUrl: "dashboard/dashboard.html"
-      }).state('orcamentoObra', {
-        url: "/orcamentoObra?page",
-        templateUrl: "orcamentoObra/tabs.html"
-      })
-  
-      $urlRouterProvider.otherwise('/dashboard')
- 
+angular.module('consumoApp').config([
+  '$stateProvider',
+  '$urlRouterProvider',
+  '$httpProvider',
+  function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $stateProvider.state('dashboard', {
+      url: "/dashboard",
+      templateUrl: "dashboard/dashboard.html"
+    }).state('cadastroGas', {
+      url: "/cadastroGases?page",
+      templateUrl: "cadastroGas/tabs.html"
+    }).state('consumoGas', {
+      url: "/consumoGases?page",
+      templateUrl: "consumoGas/tabs.html"
+    }).state('entradaGas', {
+      url: "/entradaGases?page",
+      templateUrl: "entradaGas/tabs.html"
+    }).state('leituraGas', {
+      url: "/leituraGases?page",
+      templateUrl: "leituraGas/tabs.html"
+    }).state('usuario', {
+      url: "/usuarios?page",
+      templateUrl: "usuario/tabs.html"
+    })
+
+    $httpProvider.interceptors.push('handleResponseError')
+
+  }])
+  .run([
+    '$rootScope',
+    '$http',
+    '$location',
+    '$window',
+    'auth',
+    function ($rootScope, $http, $location, $window, auth) {
+      validateUser()
+      $rootScope.$on('$locationChangeStart', () => validateUser())
+
+      function validateUser() {
+        const user = auth.getUser()
+        const authPage = '/auth.html'
+        const isAuthPage = $window.location.href.includes(authPage)
+
+        if (!user && !isAuthPage) {
+          $window.location.href = authPage
+        } else if (user && !user.isValid) {
+          auth.validateToken(user.token, (err, valid) => {
+            if (!valid) {
+              $window.location.href = authPage
+            } else {
+              user.isValid = true
+              // responsavel por comunicar com o backend
+              $http.defaults.headers.common.Authorization = user.token
+              isAuthPage ? $window.location.href = '/' : $location.path('/dashboard')
+            }
+          })
+        }
       }
-    ])
-  
+    }
+  ])
+
+
+
+
+

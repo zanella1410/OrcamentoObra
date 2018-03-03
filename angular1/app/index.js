@@ -1,4 +1,4 @@
-angular.module('orcamentoApp', [
+angular.module('consumoApp', [
     'ui.router',
     'ngAnimate',
     'toastr'

@@ -1,0 +1,37 @@
+<div role="form">
+    <div class="box-body">
+
+        <field id="gas" label="Gas" grid="8" placeholder="Informe o gás"
+         type="Text" model="cgCtrl.consumoGas.gas" readonly="cgCtrl.tabDelete"></field>
+
+         <field id="estoque" label="Estoque" grid="8" placeholder="Informe o valor do estoque"
+         type="Number" model="cgCtrl.consumoGas.estoque" readonly="cgCtrl.tabDelete"></field>
+
+         <field id="estoquemin" label="Estoque Mínimo" grid="8" placeholder="Informe o valor do estoque mínimo"
+         type="Number" model="cgCtrl.consumoGas.estoquemin" readonly="cgCtrl.tabDelete"></field>
+
+         <field id="unidademedida" label="Unidade de Medida" grid="8" placeholder="Informe a unidade de medida"
+         type="Text" model="cgCtrl.consumoGas.unidademedida" readonly="cgCtrl.tabDelete"></field>
+
+         <field id="vlunitario" label="Valor Unitário" grid="8" placeholder="Informe o valor unitário"
+         type="Number" model="cgCtrl.consumoGas.vlunitario" readonly="cgCtrl.tabDelete"></field>
+
+         
+        <!--
+        <field id="cliente" label="Cliente" placeholder="Informe o Cliente" grid="12"></field>
+        <field id="cidade" label="Cidade" placeholder="Informe a Cidade" grid="12"></field>
+        <field id="estado" label="Estado" placeholder="Informe o Estado" grid="12"></field>
+        -->
+
+    </div>
+</div>
+
+
+
+<div class="box-footer">
+    <button class="btn btn-primary" ng-click="cgCtrl.create()" ng-if="cgCtrl.tabCreate">Incluir</button>
+    <button class="btn btn-info" ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+    <button class="btn btn-danger" ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+    <button class="btn btn-default" ng-click="cgCtrl.refresh()">Cancelar</button>
+</div>
+</div>

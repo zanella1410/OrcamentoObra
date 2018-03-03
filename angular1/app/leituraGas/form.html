@@ -1,0 +1,61 @@
+<div role="form">
+    <div class="box-body">
+
+        <!--https://docs.angularjs.org/api/ng/directive/select -->
+        <!--
+         <div class="col-xs-8">
+                <div class="form-group">
+                    <label for="unidademedida">Gás</label>
+                    
+                    <!--
+                    <select name="unidademedida" id="unidademedida" ng-model="cgCtrl.leituraGas.unidademedida" ng-disabled="cgCtrl.tabDelete"
+                    class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    -->
+        <!--
+                    <select  name="gas" id="gas"
+                    ng-options="option.cadastrogas for option in CadastroGasCtrl.gases track by cadastrogas.id"
+                    ng-model="CadastroGasCtrl.cadastroGas.gas"></select>
+                    
+                  <option ng-repeat="option in CadastroGasCtrl.gases" value="{{option.idCadastroGas}}">{{option.gas}}</option>
+                        
+                    </select>
+                    
+                </div>
+            </div>
+        -->
+
+        
+        <div class="col-xs-8">
+            <div class="form-group">
+                <label for="gas">Gás</label>
+                <!--
+                <select name="unidademedida" id="unidademedida" ng-model="cgCtrl.cadastroGas.unidademedida"
+                -->
+                <select name="gas" id="gas" ng-model="cgCtrl.leituraGas.gas" ng-disabled="cgCtrl.tabDelete" class="form-control select2 select2-hidden-accessible"
+                    style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option value="">Selecione o gás</option>
+                    <option value="Argônio">Argônio</option>
+                    <option value="Gás Carbônico">Gás Carbônico</option>
+                    <option value="GLP">GLP</option>
+                    <option value="Oxigênio">Oxigênio</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <field id="quantidadetq" label="% Tanque" grid="8" placeholder="Informe a leitura do tanque" type="Number" model="cgCtrl.leituraGas.quantidadetq"
+            readonly="cgCtrl.tabDelete"></field>
+
+    </div>
+</div>
+
+
+
+<div class="box-footer">
+    <button class="btn btn-primary" ng-click="cgCtrl.create()" ng-if="cgCtrl.tabCreate">Incluir</button>
+    <button class="btn btn-info" ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+    <button class="btn btn-danger" ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+    <button class="btn btn-default" ng-click="cgCtrl.refresh()">Cancelar</button>
+</div>
+</div>

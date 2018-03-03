@@ -1,10 +1,36 @@
-<content-header name="Dashboard" small="Versão 1.0">
-</content-header>
+<content-header name="Dashboard" small="Versão 1.0"> </content-header>
 
-<section class="content">
+<section class="content" ng-controller="DashboardCtrl as dashboard">
 
-    <value-box grid="4" color-class="bg-green" icon-class="fa fa-bank" value="Obras" text="5"></value-box>
-
-    <value-box grid="4" color-class="bg-blue" icon-class="fa fa-bank" value="Clientes" text="3"></value-box>
+    <h3>Estoque Atual</h3>
+    <br>
+    <value-box grid="3" color-class="bg-red" icon-class="fa fa-bank" value="Argonio" text="18.5 M³"></value-box>
+    <value-box grid="3" color-class="bg-blue" icon-class="fa fa-bank" value="Gás Carbônico" text="47.10 KG"></value-box>
+    <value-box grid="3" color-class="bg-orange" icon-class="fa fa-bank" value="GLP" text="39.50 KG"></value-box>
+    <value-box grid="3" color-class="bg-green" icon-class="fa fa-bank" value="Oxigênio" text="49.30 M³"></value-box>
 
 </section>
+
+
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+    <h3>Consumo Diário</h3>
+    <br>
+    <value-box grid="3" color-class="bg-red" icon-class="fa fa-bank" value="Argonio" text="18.5 M³"></value-box>
+    <value-box grid="3" color-class="bg-blue" icon-class="fa fa-bank" value="Gás Carbônico" text="47.10 KG"></value-box>
+    <value-box grid="3" color-class="bg-orange" icon-class="fa fa-bank" value="GLP" text="39.50 KG"></value-box>
+    <value-box grid="3" color-class="bg-green" icon-class="fa fa-bank" value="Oxigênio" text="49.30 M³"></value-box>
+
+</section>
+
+<!--
+
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+    <h3>Ultimos 30 Dias</h3>
+    <br>
+    <value-box grid="3" color-class="bg-red" icon-class="fa fa-bank" value="Argonio" text="18.5 M³"></value-box>
+    <value-box grid="3" color-class="bg-blue" icon-class="fa fa-bank" value="Gás Carbônico" text="47.10 KG"></value-box>
+    <value-box grid="3" color-class="bg-orange" icon-class="fa fa-bank" value="GLP" text="39.50 KG"></value-box>
+    <value-box grid="3" color-class="bg-green" icon-class="fa fa-bank" value="Oxigênio" text="49.30 M³"></value-box>
+
+</section>
+-->

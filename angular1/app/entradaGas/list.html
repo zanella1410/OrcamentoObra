@@ -1,0 +1,40 @@
+<div class="box-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Gás</th>
+                <th>UN Medida</th>
+                <th>VL Unitário</th>
+                <th>Quantidade</th>
+                <th>Percentual TQ</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="entradaGas in cgCtrl.entradaGases">
+                <td>{{:: entradaGas.data }}</td>
+                <td>{{:: entradaGas.gas }}</td>
+                <td>{{:: entradaGas.unidademedida }}</td>
+                <td>{{:: entradaGas.vlunitario }}</td>
+                <td>{{:: entradaGas.quantidade }}</td>
+                <td>{{:: entradaGas.percentual }}</td>
+               
+                 <td style="width:100px;"> 
+                <!-- <td class="table-actions"> 140px 3 botoes -->
+                    <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(entradaGas)">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" ng-click="cgCtrl.showTabDelete(entradaGas)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="box-footer clearfix">
+    <paginator url="/#!/entradaGases" pages="{{ cgCtrl.pages }}"></paginator>
+</div>
+

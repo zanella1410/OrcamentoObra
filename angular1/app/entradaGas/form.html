@@ -1,0 +1,61 @@
+<div role="form">
+    <div class="box-body">
+
+        <!--
+        <field id="gas" label="Gas" grid="8" placeholder="Informe o gás" type="Text" 
+        model="cgCtrl.cadastroGas.gas" readonly="cgCtrl.tabDelete"></field>
+        -->
+
+        <div class="col-xs-8">
+            <div class="form-group">
+                <label for="gas">Gás</label>
+                <!--
+                    <select name="unidademedida" id="unidademedida" ng-model="cgCtrl.cadastroGas.unidademedida"
+                    -->
+                <select name="gas" id="gas" ng-model="cgCtrl.entradaGas.gas" ng-disabled="cgCtrl.tabDelete" class="form-control select2 select2-hidden-accessible"
+                    style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option value="">Selecione o gás</option>
+                    <option value="Argônio">Argônio</option>
+                    <option value="Gás Carbônico">Gás Carbônico</option>
+                    <option value="GLP">GLP</option>
+                    <option value="Oxigênio">Oxigênio</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="col-xs-8">
+            <div class="form-group">
+                <label for="unidademedida">Unidade de Medida</label>
+                
+                <select name="unidademedida" id="unidademedida" ng-model="cgCtrl.entradaGas.unidademedida" ng-disabled="cgCtrl.tabDelete"
+                    class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option value="">Selecione a unidade de medida</option>
+                    <option value="M3">M3</option>
+                    <option value="KG">KG</option>
+                </select>
+            </div>
+        </div>
+
+       
+        <field id="vlunitario" label="Valor Unitário" grid="8" placeholder="Informe o valor unitário" type="Number"
+         model="cgCtrl.entradaGas.vlunitario"  readonly="cgCtrl.tabDelete"></field>
+
+        <field id="quantidade" label="Quantidade" grid="8" placeholder="Informe quantidade" type="Number"
+            model="cgCtrl.entradaGas.quantidade" readonly="cgCtrl.tabDelete"></field>
+
+        <field id="percentual" label="Percentual do Tanque" grid="8" placeholder="Percentual" type="Number" 
+        model="cgCtrl.entradaGas.percentual" readonly="cgCtrl.tabDelete"></field>
+
+    </div>
+</div>
+
+
+
+<div class="box-footer">
+    <button class="btn btn-primary" ng-click="cgCtrl.create()" ng-if="cgCtrl.tabCreate">Incluir</button>
+    <button class="btn btn-info" ng-if="cgCtrl.tabUpdate" ng-click="cgCtrl.update()">Alterar</button>
+    <button class="btn btn-danger" ng-if="cgCtrl.tabDelete" ng-click="cgCtrl.delete()">Excluir</button>
+    <button class="btn btn-default" ng-click="cgCtrl.refresh()">Cancelar</button>
+</div>
+</div>

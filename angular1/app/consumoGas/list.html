@@ -1,0 +1,37 @@
+<div class="box-body">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Gás</th>
+                <th>Estoque</th>
+                <th>Estoque Min</th>
+                <th>UN Medida</th>
+                <th>VL Unitário</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="consumoGas in cgCtrl.consumoGases">
+                <td>{{:: consumoGas.gas }}</td>
+                <td>{{:: consumoGas.estoque }}</td>
+                <td>{{:: consumoGas.estoquemin }}</td>
+                <td>{{:: consumoGas.unidademedida }}</td>
+                <td>{{:: consumoGas.vlunitario }}</td>
+                 <td style="width:100px;"> 
+                <!-- <td class="table-actions"> 140px 3 botoes -->
+                    <button class="btn btn-warning" ng-click="cgCtrl.showTabUpdate(consumoGas)">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" ng-click="cgCtrl.showTabDelete(consumoGas)">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--
+<div class="box-footer clearfix">
+    <paginator url="/#!/consumoGases" pages="{{ pages }}"></paginator>
+</div>
+-->

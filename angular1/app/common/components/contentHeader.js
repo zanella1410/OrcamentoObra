@@ -1,4 +1,4 @@
-angular.module('orcamentoApp').component('contentHeader', {
+angular.module('consumoApp').component('contentHeader', {
     bindings: {
        name: '@',
        small: '@',
